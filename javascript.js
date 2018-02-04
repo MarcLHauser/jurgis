@@ -3,16 +3,19 @@ var map = {
     "Lithuania" : {
         place: "Lithuania",
         question: "You are Jurgis, a 27-year-old Lithuanian man who has fallen in love with Ona, a 16-year-old girl. Do you want to go to America with her and her family? Answer 'yes()' or 'no()'",
+        next: "New York",
     },
     
     "New York" : {
         place: "New York",
         question: "You arrive in New York. A man in a blue uniform says he knows a place you can stay at. Do you follow him to a hotel?",
+        next: "Hotel",
     },
     
     "Hotel" : {
         place: "Hotel",
         question: "The man makes you pay enormous fees to get out. Once you get out of the hotel, you remember that your friend got rich in Chicago. Do you want to go to Chicago?",
+        next: "Lithuania",
     },
     
     "Freeze" : {
@@ -47,7 +50,7 @@ var ask = function(){
 
 var yes = function(){
 
-    player.location = map["New York"];
+    player.location = map[player.location.next];
     return ask();
 };
 
