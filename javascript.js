@@ -1,11 +1,31 @@
-var questions = ["You are Jurgis, a 27-year-old Lithuanian man who has fallen in love with Ona, a 16-year-old girl. Do you want to go to America with her and her family? Answer 'yes()' or 'no()'", "You arrive in New York. A man in a blue uniform says he knows a place you can stay at. Do you follow him to a hotel?", "The man makes you pay enormous fees to get out. Once you get out of the hotel, you remember that your friend got rich in Chicago. Do you want to go to Chicago?"];
+var map = {
+    
+    "Lithuania" : {
+        place: "Lithuania",
+        question: "You are Jurgis, a 27-year-old Lithuanian man who has fallen in love with Ona, a 16-year-old girl. Do you want to go to America with her and her family? Answer 'yes()' or 'no()'",
+    },
+    
+    "New York" : {
+        place: "New York",
+        question: "You arrive in New York. A man in a blue uniform says he knows a place you can stay at. Do you follow him to a hotel?",
+    },
+    
+    "Hotel" : {
+        place: "Hotel",
+        question: "The man makes you pay enormous fees to get out. Once you get out of the hotel, you remember that your friend got rich in Chicago. Do you want to go to Chicago?",
+    },
+    
+    "Freeze" : {
+        causeDeath : "the cold climate"
+    }
+};
 
 var player = {
     name: "Jurgis",
     alive: true,
-    place: "Lithuania",
+    place: map.Lithuania.place,
     causeDeath: "a cough",
-    questionNumber: questions[0]
+    questionNumber: map.Lithuania.question
 };
 
 var ask = function(){
