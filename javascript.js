@@ -23,16 +23,16 @@ var map = {
 var player = {
     name: "Jurgis",
     alive: true,
-    place: map.Lithuania.place,
+    location: map.Lithuania,
+    place: null,
     causeDeath: "a cough",
-    questionNumber: map.Lithuania.question
 };
 
 var ask = function(){
     
     if(player.alive){
        
-        console.log(player.questionNumber);
+        console.log(player.location.question);
         return "";
     
     } else {
@@ -43,11 +43,11 @@ var ask = function(){
 
 };
 
-var n = 0;  
+
 
 var yes = function(){
-    n = n + 1;
-    player.questionNumber = questions[n];
+
+    player.location = map["New York"];
     return ask();
 };
 
