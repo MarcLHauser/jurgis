@@ -34,28 +34,25 @@ var player = {
 };
 
 var ask = function(){
-    
-    if(player.alive){
-        player.place = player.location.place;
-        return player.location.question;
-    
-    } else {
+
+    if( player.location.causeDeath ) {
         console.log("You have died in " + player.place + " of " + player.location.causeDeath);
         return "Game Over.";
-    }
 
+    } else {
+        player.place = player.location.place;
+        return player.location.question;
+    }
+    
 };
 
-
-
-var yes = function(){
+var yes = function() {
     player.location = map[player.location.yes];
     return ask();
 };
 
-var no = function(){
+var no = function() {
     player.location = map[player.location.no];
-    player.alive = false;
     return ask();
 };
 
