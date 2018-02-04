@@ -16,10 +16,6 @@ var map = {
         place: "Hotel",
         question: "The man makes you pay enormous fees to get out. Once you get out of the hotel, you remember that your friend got rich in Chicago. Do you want to go to Chicago?",
         yes: "Lithuania",
-    },
-    
-    "Freeze" : {
-        causeDeath : "the cold climate"
     }
 };
 
