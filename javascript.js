@@ -30,16 +30,14 @@ var player = {
     name: "Jurgis",
     alive: true,
     location: map.Lithuania,
-    place: null,
-    causeDeath: "a cough",
+    place: null
 };
 
 var ask = function(){
     
     if(player.alive){
         player.place = player.location.place;
-        console.log(player.location.question);
-        return "";
+        return player.location.question;
     
     } else {
         console.log("You have died in " + player.place + " of " + player.location.causeDeath);
@@ -58,8 +56,7 @@ var yes = function(){
 var no = function(){
     player.location = map[player.location.no];
     player.alive = false;
-    player.causeDeath = "cold climate";
     return ask();
 };
 
-ask();
+console.log( ask() );
