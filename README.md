@@ -1,0 +1,1 @@
+# Sammy's Humanities Project
